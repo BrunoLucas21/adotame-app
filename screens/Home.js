@@ -74,8 +74,8 @@ export default function HomeScreen() {
 
         <Text style={styles.title}>Animais Disponíveis</Text>
 
-        <ScrollView contentContainerStyle={styles.cardsContainer}>
-          {dadosAnimais.map(({ img, nome, localidade, especie }, index) => (
+        <ScrollView contentContainerStyle={styles.cardsContainer} showsVerticalScrollIndicator={false}>
+          {dadosAnimais.map(({ img, nome, localidade }, index) => (
             <View key={index} style={styles.cards}>
               <TouchableOpacity onPress={() => navigation.navigate("Details")}>
                 <Image

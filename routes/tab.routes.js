@@ -3,7 +3,7 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/Home";
 import ChatScreen from "../screens/Chat";
 import FavoriteScreen from "../screens/Favorite";
-import ProfileScreen from "../screens/Profile";
+import SettingScreen from "../screens/Setting";
 
 const Tab = createBottomTabNavigator();
 
@@ -96,13 +96,13 @@ export default function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="Setting"
+        component={SettingScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Feather name="user" size={size} color="white" />
+            <Feather name="settings" size={size} color="white" />
           ),
-          tabBarLabel: "Perfil",
+          tabBarLabel: "Configuração",
           tabBarStyle: {
             backgroundColor: "#56409e",
             height: 60,
