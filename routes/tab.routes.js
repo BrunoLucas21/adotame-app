@@ -11,7 +11,7 @@ export default function TabRoutes() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Home"
+        name="home"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
@@ -19,24 +19,17 @@ export default function TabRoutes() {
           ),
           tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#978dcc",
-            height: 60,
-            borderBottomLeftRadius: 16,
-            borderBottomRightRadius: 16,
+            backgroundColor: "#fff",
+            height: 55,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 8,
-            position: "absolute",
-          },
-          tabBarLabelStyle: {
-            color: "#fff",
-            bottom: 4,
+            position: 'absolute',
           },
           tabBarIconStyle: {
             marginTop: 10
           },
-          tabBarActiveTintColor: "white",
-          tabBarInactiveTintColor: "gray"
+          tabBarActiveTintColor: "#934fec",
+          tabBarInactiveTintColor: "#d4baf8",
         }}
       />
       <Tab.Screen
@@ -52,24 +45,17 @@ export default function TabRoutes() {
           ),
           tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#978dcc",
-            height: 60,
-            borderBottomLeftRadius: 16,
-            borderBottomRightRadius: 16,
+            backgroundColor: "#fff",
+            height: 55,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 8,
-            position: "absolute",
-          },
-          tabBarLabelStyle: {
-            color: "#fff",
-            bottom: 4,
+            position: 'absolute',
           },
           tabBarIconStyle: {
             marginTop: 10
           },
-          tabBarActiveTintColor: "white",
-          tabBarInactiveTintColor: "gray"
+          tabBarActiveTintColor: "#934fec",
+          tabBarInactiveTintColor: "#d4baf8",
         }}
       />
       <Tab.Screen
@@ -81,24 +67,17 @@ export default function TabRoutes() {
           ),
           tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#978dcc",
-            height: 60,
-            borderBottomLeftRadius: 16,
-            borderBottomRightRadius: 16,
+            backgroundColor: "#fff",
+            height: 55,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 8,
-            position: "absolute",
-          },
-          tabBarLabelStyle: {
-            color: "#fff",
-            bottom: 4,
+            position: 'absolute',
           },
           tabBarIconStyle: {
             marginTop: 10
           },
-          tabBarActiveTintColor: "white",
-          tabBarInactiveTintColor: "gray"
+          tabBarActiveTintColor: "#934fec",
+          tabBarInactiveTintColor: "#d4baf8",
         }}
       />
       <Tab.Screen
@@ -110,24 +89,17 @@ export default function TabRoutes() {
           ),
           tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#978dcc",
-            height: 60,
-            borderBottomLeftRadius: 16,
-            borderBottomRightRadius: 16,
+            backgroundColor: "#fff",
+            height: 55,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 8,
-            position: "absolute",
-          },
-          tabBarLabelStyle: {
-            color: "#fff",
-            bottom: 4,
+            position: 'absolute',
           },
           tabBarIconStyle: {
             marginTop: 10,
           },
-          tabBarActiveTintColor: "white",
-          tabBarInactiveTintColor: "gray"
+          tabBarActiveTintColor: "#934fec",
+          tabBarInactiveTintColor: "#d4baf8",
         }}
       />
     </Tab.Navigator>

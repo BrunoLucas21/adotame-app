@@ -8,8 +8,11 @@ export default function AnimalsCards({ item, index }) {
 
   return (
     <View key={index} style={styles.cards}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Details", item)}
+      >
       <Image
-        source={{ uri: item.img }}
+        source={item.img}
         style={styles.cardsImg}
         resizeMode="cover"
         alt="imagem"
@@ -17,17 +20,17 @@ export default function AnimalsCards({ item, index }) {
       <View style={styles.cardsBody}>
         <Text style={styles.cardsTitle}>{item.nome}</Text>
         <Text style={styles.cardsSubtitle}>
-          <Feather name="" size={14} color="#9eadba" /> {item.idade}
-        </Text>
-        <Text style={styles.cardsSubtitle}>
           <Feather name="map-pin" size={14} color="#9eadba" /> {item.localidade}
         </Text>
+        <View style={styles.cardsBox}>
+          <View style={{ backgroundColor: "#e1e8fe", height: 27, width: 75, borderRadius: 12 }}>
+            <Text style={styles.cardsTextSexo}>{item.sexo}</Text>
+          </View>
+          <View style={{ backgroundColor: "#fef3de", height: 27, width: 75, borderRadius: 12 }}>
+            <Text style={styles.cardsTextIdade}>{item.idade}</Text>
+          </View>
+        </View>
       </View>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Details", { ...item })}
-        style={styles.btn}
-      >
-        <Text style={styles.btnText}>Adotar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -36,15 +39,15 @@ export default function AnimalsCards({ item, index }) {
 const styles = StyleSheet.create({
   cards: {
     backgroundColor: "#fff",
-    paddingHorizontal: 14,
-    paddingVertical: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
     marginBottom: 16,
     padding: 4,
     borderRadius: 16,
   },
   cardsBody: {
-    paddingVertical: 16,
-    paddingHorizontal: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 4,
   },
   cardsTitle: {
     fontSize: 21,
@@ -62,19 +65,39 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "500",
   },
+  cardsBox: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: 150,
+    margin: 2
+  },
+  cardsTextSexo: {
+    fontSize: 18,
+    fontWeight: "400",
+    textAlign: "center",
+    justifyContent: "center",
+    color: '#567ff7'
+  },
+  cardsTextIdade: {
+    fontSize: 18,
+    fontWeight: "400",
+    textAlign: "center",
+    justifyContent: "center",
+    color: '#f9c767'
+  },
   btn: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#e6e7fa',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#934fec",
     height: 40,
-    width: '100%',
-    borderRadius: 16
+    width: "100%",
+    borderRadius: 16,
   },
   btnText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: '700',
-    textAlign: 'center',
-    justifyContent: 'center'
-  }
+    fontWeight: "700",
+    textAlign: "center",
+    justifyContent: "center",
+  },
 });

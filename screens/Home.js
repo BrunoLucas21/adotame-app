@@ -14,8 +14,9 @@ import { useNavigation } from "@react-navigation/native";
 import { tipoCategorias, dadosAnimais } from "../contents";
 import AnimalsCards from "../components/animalsCards";
 import TypesCategory from "../components/typesCategory";
+import item from "../contents/index"
 
-export default function HomeScreen(props) {
+export default function HomeScreen(item) {
   const navigation = useNavigation();
 
   return (
@@ -147,6 +148,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   cardsContainer: {
-    padding: 14,
+    padding: 12,
   },
 });

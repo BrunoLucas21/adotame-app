@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   btn: {
-    backgroundColor: "#56409e",
+    backgroundColor: "#934fec",
     paddingVertical: 12,
     paddingHorizontal: 14,
     alignItems: "center",
@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
     width: '48%'
   },
   btnText: {
-    fontSize: 15,
-    fontWeight: "500",
+    fontSize: 18,
+    fontWeight: "600",
     color: "#fff",
   },
 });

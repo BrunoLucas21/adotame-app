@@ -18,6 +18,14 @@ export default function NotificationScreen() {
           </View>
           <Text style={styles.subtitle}>Veja as mensagens abaixo</Text>
         </View>
+        {/* Mensagens */}
+        <View style={styles.messages}>
+          <View style={styles.contexts}>
+            <View style={styles.inputText}>
+              <Text style={styles.text}></Text>
+            </View>
+          </View>
+        </View>
       </View>
     </SafeAreaView>
   );
