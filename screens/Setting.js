@@ -50,7 +50,7 @@ export default function SettingScreen() {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
           <View style={styles.iconAction}>
@@ -81,7 +81,7 @@ export default function SettingScreen() {
                     <View style={styles.row}>
                       <Feather
                         name={icon}
-                        color="616161"
+                        color="#616161"
                         size={22}
                         style={{ marginRight: 12 }}
                       />

@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import HomeScreen from "../screens/Home";
 import ChatScreen from "../screens/Chat";
 import FavoriteScreen from "../screens/Favorite";
@@ -15,17 +15,17 @@ export default function TabRoutes() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Feather name="home" size={size} color="white" />
+            <AntDesign name="home" size={size} color={color} />
           ),
-          tabBarLabel: "Início",
+          tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#56409e",
+            backgroundColor: "#978dcc",
             height: 60,
             borderBottomLeftRadius: 16,
             borderBottomRightRadius: 16,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 10,
+            margin: 8,
             position: "absolute",
           },
           tabBarLabelStyle: {
@@ -33,8 +33,10 @@ export default function TabRoutes() {
             bottom: 4,
           },
           tabBarIconStyle: {
-            top: 3,
+            marginTop: 10
           },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "gray"
         }}
       />
       <Tab.Screen
@@ -42,21 +44,21 @@ export default function TabRoutes() {
         component={ChatScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Ionicons
-              name="chatbubble-ellipses-outline"
+            <AntDesign
+              name="message1"
               size={size}
-              color="white"
+              color={color}
             />
           ),
-          tabBarLabel: "Chat",
+          tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#56409e",
+            backgroundColor: "#978dcc",
             height: 60,
             borderBottomLeftRadius: 16,
             borderBottomRightRadius: 16,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 10,
+            margin: 8,
             position: "absolute",
           },
           tabBarLabelStyle: {
@@ -64,8 +66,10 @@ export default function TabRoutes() {
             bottom: 4,
           },
           tabBarIconStyle: {
-            top: 3,
+            marginTop: 10
           },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "gray"
         }}
       />
       <Tab.Screen
@@ -73,17 +77,17 @@ export default function TabRoutes() {
         component={FavoriteScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Feather name="heart" size={size} color="white" />
+            <AntDesign name="hearto" size={size} color={color} />
           ),
-          tabBarLabel: "Favoritos",
+          tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#56409e",
+            backgroundColor: "#978dcc",
             height: 60,
             borderBottomLeftRadius: 16,
             borderBottomRightRadius: 16,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 10,
+            margin: 8,
             position: "absolute",
           },
           tabBarLabelStyle: {
@@ -91,8 +95,10 @@ export default function TabRoutes() {
             bottom: 4,
           },
           tabBarIconStyle: {
-            top: 3,
+            marginTop: 10
           },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "gray"
         }}
       />
       <Tab.Screen
@@ -100,17 +106,17 @@ export default function TabRoutes() {
         component={SettingScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Feather name="settings" size={size} color="white" />
+            <AntDesign name="setting" size={size} color={color} />
           ),
-          tabBarLabel: "Configuração",
+          tabBarLabel: "",
           tabBarStyle: {
-            backgroundColor: "#56409e",
+            backgroundColor: "#978dcc",
             height: 60,
             borderBottomLeftRadius: 16,
             borderBottomRightRadius: 16,
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            margin: 10,
+            margin: 8,
             position: "absolute",
           },
           tabBarLabelStyle: {
@@ -118,8 +124,10 @@ export default function TabRoutes() {
             bottom: 4,
           },
           tabBarIconStyle: {
-            top: 3,
+            marginTop: 10,
           },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "gray"
         }}
       />
     </Tab.Navigator>

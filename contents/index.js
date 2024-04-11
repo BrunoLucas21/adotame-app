@@ -1,26 +1,26 @@
 export const tipoCategorias = [
   {
-    icon: require("../../assets/icons/ong.png"),
+    icon: require("../assets/icons/ong.png"),
     title: "ONGs",
   },
   {
-    icon: require("../../assets/icons/cachorro.png"),
+    icon: require("../assets/icons/cachorro.png"),
     title: "Cachorros",
   },
   {
-    icon: require("../../assets/icons/gato.png"),
+    icon: require("../assets/icons/gato.png"),
     title: "Gatos",
   },
   {
-    icon: require("../../assets/icons/ave.png"),
+    icon: require("../assets/icons/ave.png"),
     title: "Aves",
   },
   {
-    icon: require("../../assets/icons/cavalo.png"),
+    icon: require("../assets/icons/cavalo.png"),
     title: "Cavalo",
   },
   {
-    icon: require("../../assets/icons/coelho.png"),
+    icon: require("../assets/icons/coelho.png"),
     title: "Coelho",
   },
 ];

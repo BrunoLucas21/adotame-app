@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -9,7 +16,7 @@ export default function ProfileScreen() {
   const [name] = useState("Bruno");
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.iconAction}>
@@ -32,41 +39,60 @@ export default function ProfileScreen() {
         </View>
 
         <View style={styles.bodyContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodyTitle}>
-                <Feather name="user" size={16} color="#56409e" /> Minha conta
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Notification")}>
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodyTitle}>
-                <Feather name="bell" size={16} color="#56409e" /> Notificações
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Setting")}>
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodyTitle}>
-                <Feather name="settings" size={16} color="#56409e" /> Configurações
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}}>
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodyTitle}>
-                <Feather name="help-circle" size={16} color="#56409e" /> Help
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-            <View style={styles.bodyBox}>
-              <Text style={styles.bodyTitle}>
-                <Feather name="log-out" size={16} color="#56409e" /> Sair
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="user" size={16} color="#56409e" /> Minha conta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Notification")}
+            >
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="bell" size={16} color="#56409e" /> Notificações
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Donation")}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="heart" size={16} color="#56409e" /> Doar 
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="phone" size={16} color="#56409e" /> Denunciar
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Setting")}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="settings" size={16} color="#56409e" />{" "}
+                  Configurações
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="help-circle" size={16} color="#56409e" /> Help
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="log-out" size={16} color="#56409e" /> Sair
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
       </View>
     </SafeAreaView>

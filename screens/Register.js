@@ -19,7 +19,7 @@ export default function RegisterScreen() {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
       <View style={styles.hero}>
         <Image
           source={require("../assets/images/register.png")}

@@ -7,17 +7,19 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { tipoCategorias, dadosAnimais } from "../components/contents";
+import { tipoCategorias, dadosAnimais } from "../contents";
+import AnimalsCards from "../components/animalsCards";
+import TypesCategory from "../components/typesCategory";
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.iconAction}>
@@ -29,7 +31,7 @@ export default function HomeScreen() {
               <Feather name="menu" size={32} color="black" />
             </TouchableOpacity>
             <Text style={styles.headerTitle}>
-              Localização{'\n'}Campina Grande - PB
+              Localização{"\n"}Campina Grande - PB
             </Text>
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
               <Image
@@ -60,39 +62,20 @@ export default function HomeScreen() {
 
         <View style={styles.stats}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {tipoCategorias.map(({ title, icon }) => (
-              <View style={styles.statsItem}>
-                <TouchableOpacity style={styles.statsItemBtn}>
-                  <Text style={styles.statsItemLabel}>{title}</Text>
-
-                  <Image source={icon} style={{ height: 30, width: 30 }} />
-                </TouchableOpacity>
-              </View>
+            {tipoCategorias.map((item, index) => (
+              <TypesCategory key={index} item={item} />
             ))}
           </ScrollView>
         </View>
 
         <Text style={styles.title}>Animais Disponíveis</Text>
 
-        <ScrollView contentContainerStyle={styles.cardsContainer} showsVerticalScrollIndicator={false}>
-          {dadosAnimais.map(({ img, nome, localidade }, index) => (
-            <View key={index} style={styles.cards}>
-              <TouchableOpacity onPress={() => navigation.navigate("Details")}>
-                <Image
-                  source={{ uri: img }}
-                  style={styles.cardsImg}
-                  resizeMode="cover"
-                  alt="imagem"
-                />
-                <View style={styles.cardsBody}>
-                  <Text style={styles.cardsTitle}>{nome}</Text>
-                  <Text style={styles.cardsSubtitle}>
-                    <Feather name="map-pin" size={14} color="#9eadba" />{" "}
-                    {localidade}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </View>
+        <ScrollView
+          contentContainerStyle={styles.cardsContainer}
+          showsVerticalScrollIndicator={false}
+        >
+          {dadosAnimais.map((item, index) => (
+            <AnimalsCards key={index} item={item} />
           ))}
         </ScrollView>
       </View>
@@ -109,11 +92,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   headerTitle: {
-    textAlign: 'center',
-    justifyContent: 'center',
+    textAlign: "center",
+    justifyContent: "center",
     color: "#56409e",
-    fontWeight: '600',
-    bottom: 4
+    fontWeight: "600",
+    bottom: 4,
   },
   iconAction: {
     flexDirection: "row",
@@ -163,52 +146,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  statsItem: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 12,
-    backgroundColor: "#fff",
-    marginRight: 12,
-    borderRadius: 12,
-  },
-  statsItemLabel: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#4e4a6d",
-    marginLeft: 8,
-    marginRight: "auto",
-  },
-  statsItemBtn: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
   cardsContainer: {
     padding: 14,
-  },
-  cards: {
-    borderBottomWidth: 1,
-    borderColor: "#e3e3e3",
-    marginBottom: 16,
-  },
-  cardsBody: {
-    paddingVertical: 16,
-  },
-  cardsTitle: {
-    fontSize: 21,
-    fontWeight: "700",
-    lineHeight: 20,
-    color: "#222",
-    marginBottom: 8,
-  },
-  cardsImg: {
-    width: "100%",
-    height: 200,
-    borderRadius: 12,
-  },
-  cardsSubtitle: {
-    fontSize: 15,
-    fontWeight: "500",
   },
 });
