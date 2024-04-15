@@ -55,7 +55,7 @@ export const dadosAnimais = [
   },
   {
     img: require("../assets/images/animals/dog04.png"),
-    nome: "Mia",
+    nome: "Canela",
     idade: "1 anos",
     sexo: "Fêmea",
     especie: "Vira-lata",
@@ -64,7 +64,7 @@ export const dadosAnimais = [
   },
   {
     img: require("../assets/images/animals/dog05.png"),
-    nome: "Abacaxi",
+    nome: "Pitico",
     idade: "1 anos",
     sexo: "Macho",
     especie: "Vira-lata",
@@ -91,7 +91,7 @@ export const dadosAnimais = [
   },
   {
     img: require("../assets/images/animals/dog08.png"),
-    nome: "Fred",
+    nome: "Pretinho",
     idade: "5 anos",
     sexo: "Macho",
     especie: "Vira-lata",

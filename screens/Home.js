@@ -14,9 +14,8 @@ import { useNavigation } from "@react-navigation/native";
 import { tipoCategorias, dadosAnimais } from "../contents";
 import AnimalsCards from "../components/animalsCards";
 import TypesCategory from "../components/typesCategory";
-import item from "../contents/index"
 
-export default function HomeScreen(item) {
+export default function HomeScreen() {
   const navigation = useNavigation();
 
   return (

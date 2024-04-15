@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16
   },
   formAction: {
-    marginVertical: 24,
+    marginVertical: 16,
   },
   btn: {
     flexDirection: "row",

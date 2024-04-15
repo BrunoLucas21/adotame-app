@@ -17,8 +17,11 @@ export default function FavoriteScreen() {
             </TouchableOpacity>
             <Text style={styles.title}>Favoritos</Text>
           </View>
-          <Text style={styles.subtitle}>Meus favoritos</Text>
+          <Text style={styles.subtitle}>Liste seus animais favoritos</Text>
         </View>
+
+        {/* Animais Favoritos */}
+        
       </View>
     </SafeAreaView>
   );
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#56409e",
     fontWeight: "600",
-    marginRight: 135,
+    marginRight: 120,
+    textAlign: 'center'
   },
   subtitle: {
     textAlign: "center",
