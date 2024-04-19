@@ -5,18 +5,21 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Modal,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import { AntDesign, Feather } from "@expo/vector-icons";
+import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
+import ActionModal from "../components/actionModal";
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
   const [name] = useState("Bruno");
+  const [visibleModal, setVisibleModal] = useState(false);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.iconAction}>
@@ -24,13 +27,14 @@ export default function ProfileScreen() {
               <AntDesign name="left" size={32} color="black" />
             </TouchableOpacity>
             <Text style={styles.headerText}>Olá, {name}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
               <Image
                 source={require("../assets/icons/avatar.png")}
-                style={{ height: 60, width: 60, bottom: 18 }}
+                style={{ height: 60, width: 60, bottom: 14 }}
               />
             </TouchableOpacity>
           </View>
+          <Text style={styles.subtitle}>Veja as mensagens abaixo</Text>
 
           <Image
             source={require("../assets/images/perfil.png")}
@@ -39,14 +43,7 @@ export default function ProfileScreen() {
         </View>
 
         <View style={styles.bodyContainer}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <View style={styles.bodyBox}>
-                <Text style={styles.bodyTitle}>
-                  <Feather name="user" size={16} color="#56409e" /> Minha conta
-                </Text>
-              </View>
-            </TouchableOpacity>
+          <ScrollView>
             <TouchableOpacity
               onPress={() => navigation.navigate("Notification")}
             >
@@ -56,20 +53,40 @@ export default function ProfileScreen() {
                 </Text>
               </View>
             </TouchableOpacity>
+
             <TouchableOpacity onPress={() => navigation.navigate("Donation")}>
               <View style={styles.bodyBox}>
                 <Text style={styles.bodyTitle}>
-                  <Feather name="heart" size={16} color="#56409e" /> Doar 
+                  <MaterialIcons name="attach-money" size={16} color="#56409e" /> Doar
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+
+            <TouchableOpacity onPress={() => navigation.navigate("Favorite")}>
+              <View style={styles.bodyBox}>
+                <Text style={styles.bodyTitle}>
+                  <Feather name="heart" size={16} color="#56409e" /> Meus
+                  Favoritos
+                </Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => setVisibleModal(true)}>
               <View style={styles.bodyBox}>
                 <Text style={styles.bodyTitle}>
                   <Feather name="phone" size={16} color="#56409e" /> Denunciar
                 </Text>
               </View>
             </TouchableOpacity>
+
+            <Modal
+              visible={visibleModal}
+              transparent={true}
+              onRequestClose={() => setVisibleModal(false)}
+            >
+              <ActionModal handleClose={() => setVisibleModal(false)} />
+            </Modal>
+
             <TouchableOpacity onPress={() => navigation.navigate("Setting")}>
               <View style={styles.bodyBox}>
                 <Text style={styles.bodyTitle}>
@@ -78,13 +95,7 @@ export default function ProfileScreen() {
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
-              <View style={styles.bodyBox}>
-                <Text style={styles.bodyTitle}>
-                  <Feather name="help-circle" size={16} color="#56409e" /> Help
-                </Text>
-              </View>
-            </TouchableOpacity>
+
             <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
               <View style={styles.bodyBox}>
                 <Text style={styles.bodyTitle}>
@@ -143,5 +154,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "500",
     color: "#56409e",
+  },
+  subtitle: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#a0a0a0",
+    marginVertical: 8,
+    bottom: 18,
   },
 });

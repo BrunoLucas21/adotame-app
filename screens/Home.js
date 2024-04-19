@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { tipoCategorias, dadosAnimais } from "../contents";
 import AnimalsCards from "../components/animalsCards";
@@ -33,11 +33,8 @@ export default function HomeScreen() {
             <Text style={styles.headerTitle}>
               Localização{"\n"}Campina Grande - PB
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image
-                source={require("../assets/icons/avatar.png")}
-                style={{ height: 60, width: 60, bottom: 18 }}
-              />
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Ionicons name="exit-outline" size={32} color="black" />
             </TouchableOpacity>
           </View>
         </View>

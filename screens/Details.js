@@ -282,8 +282,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#934fec",
     height: 50,
     width: "90%",
-    borderRadius: 16,
-    marginHorizontal: 16,
+    borderRadius: 12,
+    marginHorizontal: 20,
   },
   btnText: {
     color: "#fff",

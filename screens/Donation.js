@@ -17,6 +17,7 @@ export default function DonationScreen() {
     email: "",
     telefone: "",
     CPF: "",
+    Valor: "",
     endereco: "",
     cidade: "",
     estado: "",
@@ -74,6 +75,16 @@ export default function DonationScreen() {
           <TextInput
             value={form.CPF}
             onChangeText={(CPF) => setForm({ ...form, CPF })}
+            style={styles.inputControl}
+          />
+        </View>
+
+        <View style={styles.input}>
+          <Text style={styles.inputLabel}>Valor</Text>
+
+          <TextInput
+            value={form.Valor}
+            onChangeText={(Valor) => setForm({ ...form, Valor })}
             style={styles.inputControl}
           />
         </View>

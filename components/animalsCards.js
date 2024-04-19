@@ -2,13 +2,17 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { dadosAnimais } from "../contents";
 
 export default function AnimalsCards({ item, index }) {
   const navigation = useNavigation();
   const [favoritado, setFavoritado] = useState(false);
+  const [animais, setAnimais] = useState([]);
 
-  const handlePress = () => {
+  const handlePress = (id) => {
     setFavoritado(!favoritado);
+    const novosAnimais = dadosAnimais.map((animal) => animal.id === id ? { ...animal, favorito: !animal.favorito } : animal);
+    setAnimais(novosAnimais);
   };
 
   return (

@@ -4,6 +4,7 @@ import HomeScreen from "../screens/Home";
 import ChatScreen from "../screens/Chat";
 import FavoriteScreen from "../screens/Favorite";
 import SettingScreen from "../screens/Setting";
+import ProfileScreen from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -59,11 +60,11 @@ export default function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name="Favorite"
-        component={FavoriteScreen}
+        name="Profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <AntDesign name="hearto" size={size} color={color} />
+            <AntDesign name="user" size={size} color={color} />
           ),
           tabBarLabel: "",
           tabBarStyle: {
