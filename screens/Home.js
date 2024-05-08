@@ -42,11 +42,8 @@ export default function HomeScreen() {
             <Text style={styles.headerTitle}>
               Localização{"\n"}Campina Grande - PB
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Image
-                source={require("../assets/icons/avatar_02.png")}
-                style={{ height: 60, width: 60, bottom: 14 }}
-              />
+            <TouchableOpacity onPress={() => navigation.navigate("Notification")}>
+              <Feather name="bell" size={32} color="black" />
             </TouchableOpacity>
           </View>
         </View>

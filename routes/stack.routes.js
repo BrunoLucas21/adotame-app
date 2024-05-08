@@ -8,6 +8,7 @@ import LoginScreen from "../screens/Login";
 import RegisterScreen from "../screens/Register";
 import ProfileScreen from "../screens/Profile";
 import NotificationScreen from "../screens/Notification";
+import ChatScreen from "../screens/Chat";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ export default function StackRoutes() {
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Notification" component={NotificationScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
