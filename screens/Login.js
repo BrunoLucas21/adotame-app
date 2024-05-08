@@ -60,6 +60,10 @@ export default function LoginScreen() {
             />
           </View>
 
+          <TouchableOpacity onPress={()=>{}}>
+            <Text style={styles.forgotPassword}>Esqueci a senha?</Text>
+          </TouchableOpacity>
+
           <View style={styles.formAction}>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
               <View style={styles.btnLogin}>
@@ -147,7 +151,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   input: {
-    marginBottom: 26,
+    marginBottom: 24,
   },
   inputControl: {
     height: 44,
@@ -174,6 +178,13 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#c0c0c0",
   },
+  forgotPassword: {
+    color: '#929292',
+    textAlign: 'right',
+    justifyContent: 'flex-end',
+    textDecorationLine: 'underline',
+    bottom: 15
+  },
   form: {
     marginBottom: 24,
     flex: 1,
@@ -185,7 +196,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: "#934fec",
+    backgroundColor: "#56409e",
     borderWidth: 1,
     borderColor: "#56409e",
     borderRadius: 8,

@@ -2,17 +2,13 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { dadosAnimais } from "../contents";
 
 export default function AnimalsCards({ item, index }) {
   const navigation = useNavigation();
   const [favoritado, setFavoritado] = useState(false);
-  const [animais, setAnimais] = useState([]);
 
-  const handlePress = (id) => {
+  const handlePress = () => {
     setFavoritado(!favoritado);
-    const novosAnimais = dadosAnimais.map((animal) => animal.id === id ? { ...animal, favorito: !animal.favorito } : animal);
-    setAnimais(novosAnimais);
   };
 
   return (
@@ -28,16 +24,9 @@ export default function AnimalsCards({ item, index }) {
           color={["transparent", "rgba(0, 0, 0, 0.6)"]}
           style={styles.iconFavorite}
         >
-          <View style={styles.btnIconFavorite}>
-            <TouchableOpacity onPress={handlePress}
-              style={{
-                padding: 3,
-                borderRadius: 12,
-              }}
-            >
-              <AntDesign name="heart" size={25} color={favoritado? 'red': 'white'} />
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity onPress={handlePress}>
+            <AntDesign name="heart" size={25} color={favoritado ? 'red' : 'white'} />
+          </TouchableOpacity>
         </View>
         <View style={styles.cardsBody}>
           <Text style={styles.cardsTitle}>{item.nome}</Text>
@@ -123,31 +112,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     color: "#f9c767",
   },
-  btn: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#934fec",
-    height: 40,
-    width: "100%",
-    borderRadius: 16,
-  },
-  btnText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "700",
-    textAlign: "center",
-    justifyContent: "center",
-  },
   iconFavorite: {
     position: "absolute",
+    top: 10,
+    right: 10,
     padding: 4,
     height: 45,
     width: 45,
-    justifyContent: "space-between",
     borderRadius: 24,
-  },
-  btnIconFavorite: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

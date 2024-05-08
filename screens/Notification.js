@@ -24,11 +24,11 @@ export default function NotificationScreen() {
             <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
               <View style={styles.iconAvatar}>
                 <Image
-                  source={require("../assets/icons/avatar.png")}
+                  source={require("../assets/icons/avatar_01.png")}
                   style={{ height: 60, width: 60, bottom: 4 }}
                 />
                 <View>
-                  <Text style={styles.title}>Bruno Freire</Text>
+                  <Text style={styles.title}>Ana Maria</Text>
                   <Text style={styles.subtitleText}>Mensagem nova</Text>
                 </View>
               </View>
@@ -37,7 +37,7 @@ export default function NotificationScreen() {
             <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
               <View style={styles.iconAvatar}>
                 <Image
-                  source={require("../assets/icons/avatar.png")}
+                  source={require("../assets/icons/avatar_03.png")}
                   style={{ height: 60, width: 60, bottom: 4 }}
                 />
                 <View>
@@ -50,7 +50,7 @@ export default function NotificationScreen() {
             <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
               <View style={styles.iconAvatar}>
                 <Image
-                  source={require("../assets/icons/avatar.png")}
+                  source={require("../assets/icons/avatar_05.png")}
                   style={{ height: 60, width: 60, bottom: 4 }}
                 />
                 <View>
@@ -63,7 +63,7 @@ export default function NotificationScreen() {
             <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
               <View style={styles.iconAvatar}>
                 <Image
-                  source={require("../assets/icons/avatar.png")}
+                  source={require("../assets/icons/avatar_02.png")}
                   style={{ height: 60, width: 60, bottom: 4 }}
                 />
                 <View>
@@ -76,7 +76,7 @@ export default function NotificationScreen() {
             <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
               <View style={styles.iconAvatar}>
                 <Image
-                  source={require("../assets/icons/avatar.png")}
+                  source={require("../assets/icons/avatar_04.png")}
                   style={{ height: 60, width: 60, bottom: 4 }}
                 />
                 <View>
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: "#934fec",
+    backgroundColor: "#56409e",
     borderWidth: 1,
     borderColor: "#56409e",
     borderRadius: 8,

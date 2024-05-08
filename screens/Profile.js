@@ -29,7 +29,7 @@ export default function ProfileScreen() {
             <Text style={styles.headerText}>Olá, {name}</Text>
             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
               <Image
-                source={require("../assets/icons/avatar.png")}
+                source={require("../assets/icons/avatar_02.png")}
                 style={{ height: 60, width: 60, bottom: 14 }}
               />
             </TouchableOpacity>

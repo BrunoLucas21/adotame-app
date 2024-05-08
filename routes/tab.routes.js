@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import HomeScreen from "../screens/Home";
-import ChatScreen from "../screens/Chat";
 import FavoriteScreen from "../screens/Favorite";
 import SettingScreen from "../screens/Setting";
 import ProfileScreen from "../screens/Profile";
@@ -34,12 +33,12 @@ export default function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name="Chat"
-        component={ChatScreen}
+        name="Favorite"
+        component={FavoriteScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <AntDesign
-              name="message1"
+              name="heart"
               size={size}
               color={color}
             />

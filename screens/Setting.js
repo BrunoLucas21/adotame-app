@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign, Feather } from "@expo/vector-icons";
+import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 const SECTIONS = [
@@ -58,6 +58,9 @@ export default function SettingScreen() {
               <AntDesign name="left" size={32} color="black" />
             </TouchableOpacity>
             <Text style={styles.title}>Configurações</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Ionicons name="exit-outline" size={32} color="black" />
+            </TouchableOpacity>
           </View>
           <Text style={styles.subtitle}>Atualize de sua preferência aqui</Text>
         </View>
@@ -138,7 +141,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#56409e",
     fontWeight: "600",
-    marginRight: 100,
   },
   subtitle: {
     textAlign: "center",

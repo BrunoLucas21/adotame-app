@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,7 +8,6 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -17,9 +17,18 @@ import TypesCategory from "../components/typesCategory";
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+  const [favorites, setFavorites] = useState([]);
+
+  const toggleFavorite = (animalId, isFavorite) => {
+    if (isFavorite) {
+      setFavorites([...favorites, animalId]);
+    } else {
+      setFavorites(favorites.filter((id) => id !== animalId));
+    }
+  };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8f8f8' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.iconAction}>
@@ -33,8 +42,11 @@ export default function HomeScreen() {
             <Text style={styles.headerTitle}>
               Localização{"\n"}Campina Grande - PB
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-              <Ionicons name="exit-outline" size={32} color="black" />
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Image
+                source={require("../assets/icons/avatar_02.png")}
+                style={{ height: 60, width: 60, bottom: 14 }}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -47,7 +59,6 @@ export default function HomeScreen() {
                 placeholder="Buscar animal"
                 placeholderTextColor="#9eadba"
               />
-
               <View style={styles.inputIcon}>
                 <Feather name="search" size={16} color="#9eadba" />
               </View>
@@ -72,7 +83,12 @@ export default function HomeScreen() {
           showsVerticalScrollIndicator={false}
         >
           {dadosAnimais.map((item, index) => (
-            <AnimalsCards key={index} item={item} />
+            <AnimalsCards
+              key={index}
+              item={item}
+              onToggleFavorite={toggleFavorite}
+              isFavorite={favorites.includes(item.id)}
+            />
           ))}
         </ScrollView>
       </View>

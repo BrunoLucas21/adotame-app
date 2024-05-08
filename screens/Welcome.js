@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   btn: {
-    backgroundColor: "#934fec",
+    backgroundColor: "#56409e",
     paddingVertical: 12,
     paddingHorizontal: 14,
     alignItems: "center",
