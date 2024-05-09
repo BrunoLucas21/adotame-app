@@ -98,8 +98,8 @@ export default function DetailsScreen({ route, index }) {
           <View
             style={{
               backgroundColor: "#ece6f6",
-              marginHorizontal: 16,
-              left: 4,
+              marginHorizontal: 8,
+              left: 12,
               borderRadius: 16,
             }}
           >
@@ -254,8 +254,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#ece6f6",
     marginBottom: 12,
     borderRadius: 12,
-    marginLeft: 12,
+    marginLeft: 20,
     width: 100,
+    left: 2,
   },
   bodyInfoTitle: {
     fontSize: 22,
@@ -279,7 +280,7 @@ const styles = StyleSheet.create({
   btn: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#934fec",
+    backgroundColor: "#56409e",
     height: 50,
     width: "90%",
     borderRadius: 12,
